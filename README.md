@@ -1,7 +1,7 @@
 # 💼 Employee Salary Prediction Using XGBoost Classifier
 
 This project aims to predict employee salaries whether it is more than 50k or less than/equal to 50k using machine learning algorithm **XGBoost** based on various personal and work-related features.  
-The application is built using Python leveraging libraries like **pandas**, **numpy**, **scikit-learn**, **matplotlib**, **seaborn**, **ngrok**, and **streamlit** for interactive web application.
+The application is built using Python leveraging libraries like **pandas**, **numpy**, **scikit-learn**, **matplotlib**, **seaborn**, and **streamlit** for interactive web application.
 
 ---
 
@@ -36,7 +36,6 @@ The model is trained on the **UCI Adult Income dataset**, a popular dataset used
 EmployeeSalaryPrediction/
 │
 ├── app.py                          # Streamlit web app
-├── run_with_ngrok.py              # Script to expose the app online using ngrok
 ├── employeeSalaryPrediction.ipynb # Jupyter Notebook (full ML pipeline)
 ├── xgb_model.pkl                  # Trained model
 ├── encoders.pkl                   # Encoders for categorical features
@@ -83,8 +82,8 @@ Saved the trained model, encoders, and test data using `pickle` for use in deplo
 Created an interactive web application using Streamlit.  
 The app allows users to input feature values and get a prediction of income class in real time.
 
-### Step 8: Deployment using Ngrok  
-Used **ngrok** to generate a public URL for easy hosting so that we can share and access the application online.
+### Step 8: Deployment using Streamlit  
+Used **Streamlit** to generate a public URL for easy hosting so that we can share and access the application online.
 
 ---
 ## Output
@@ -95,8 +94,4 @@ Used **ngrok** to generate a public URL for easy hosting so that we can share an
 ### 🖥️ To Run Locally:
 ```bash
 streamlit run app.py
-```
-### 🌐 To Run Online with Ngrok:
-```bash
-python run_with_ngrok.py
 ```
