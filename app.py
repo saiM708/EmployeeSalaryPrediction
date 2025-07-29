@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import xgboost
 
 # --- Load model, encoders, and test datasets ---
 with open("xgb_model.pkl", "rb") as f:
@@ -81,8 +82,8 @@ if st.button("Predict Salary"):
         actual_label_str = ">50K" if (actual_label in [1, '>50K']) else "<=50K"
         st.success("✔ This record is found in your test set!")
         st.write(f"**Model Prediction:** {pred_str}  \n**Actual Label:** {actual_label_str}")
-        st.write("Prediction Probability:", {">50K": proba[1], "<=50K": proba[0]})
+        st.write("Prediction Probability:", {">50K": float(proba[1]), "<=50K": float(proba[0])})
     else:
         st.info("This exact record is NOT in your test set, so only a prediction is shown.")
         st.write(f"**Model Prediction:** {pred_str}")
-        st.write("Prediction Probability:", {">50K": proba[1], "<=50K": proba[0]})
+        st.write("Prediction Probability:", {">50K": float(proba[1]), "<=50K": float(proba[0])})
